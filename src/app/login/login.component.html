@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div>
+  <h1><b>Login</b></h1>
+
+  <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+    <label for="email"
+      >E-mail
+      <input
+        class="input is-primary"
+        id="email"
+        type="email"
+        formControlName="email"
+    /></label>
+
+    <label for="senha"
+      >Senha
+      <input
+        class="input is-primary"
+        id="senha"
+        type="password"
+        formControlName="senha"
+    /></label>
+
+    <button class="button" type="submit">Login</button>
+  </form>
+</div>
