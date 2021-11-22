@@ -30,7 +30,7 @@ export class CadastroComponent implements OnInit {
 
   onSubmit(): void {
     if(this.formCadastro.valid){
-      this.service.login(this.formCadastro.value).subscribe(res => {
+      this.service.addAdmin(this.formCadastro.value).subscribe(res => {
         if(res.ok == true){
           console.log(res)
         }

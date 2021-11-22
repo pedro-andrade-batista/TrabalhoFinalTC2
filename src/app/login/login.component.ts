@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     if(this.formLogin.valid){
-      this.service.addAdmin(this.formLogin.value).subscribe(res => {
+      this.service.login(this.formLogin.value).subscribe(res => {
         if(res.ok == true){
           console.log(res)
         }
