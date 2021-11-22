@@ -1,0 +1,24 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <td><b>Nome</b></td>
+        <td><b>Data de Nascimento</b></td>
+        <td><b>Data de Cadastro</b></td>
+        <td colspan="3"><b>Ações</b></td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let paciente of listaPacientes">
+        <td>{{ paciente.nome }}</td>
+        <td>
+          <button class="attBtn">Atualizar</button>
+        </td>
+        <td>
+          <button class="delBtn">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

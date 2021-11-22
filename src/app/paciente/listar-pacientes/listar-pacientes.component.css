@@ -1,0 +1,50 @@
+div {
+  display: flex;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+table {
+  text-align: center;
+  border: 1px solid;
+}
+
+td {
+  border: 1px solid;
+}
+
+button {
+  width: 80px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  border-radius: 3px;
+  margin: 0.25rem;
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+  filter: brightness(0.8);
+}
+
+.btns {
+  width: 350px;
+}
+
+.name {
+  width: 200px;
+}
+
+.btnPerfil {
+  background: rgba(42, 187, 155, 1);
+}
+
+.btnEditar {
+  background: rgba(254, 250, 212, 1);
+  color: black;
+}
+
+.btnDeletar {
+  background: rgba(226, 106, 106, 1);
+}

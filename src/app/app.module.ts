@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ListarPacientesComponent } from './paciente/listar-pacientes/listar-pacientes.component';
+import { CadastrarPacienteComponent } from './paciente/cadastrar-paciente/cadastrar-paciente.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     CadastroComponent,
     HomeComponent,
     NavComponent,
+    ListarPacientesComponent,
+    CadastrarPacienteComponent,
   ],
   imports: [
     BrowserModule,
