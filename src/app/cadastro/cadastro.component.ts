@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { APIconnectionService } from '../apiconnection.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -9,9 +10,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class CadastroComponent implements OnInit {
   formCadastro: FormGroup;
 
-  constructor() {}
+  constructor(
+    private service: APIconnectionService
+    ){}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.initForm();
+  }
 
   private initForm() {
     this.formCadastro = new FormGroup({
@@ -23,5 +28,13 @@ export class CadastroComponent implements OnInit {
     });
   }
 
-  onSubmit(): void {}
+  onSubmit(): void {
+    if(this.formCadastro.valid){
+      this.service.login(this.formCadastro.value).subscribe(res => {
+        if(res.ok == true){
+          console.log(res)
+        }
+      })
+    }
+  }
 }

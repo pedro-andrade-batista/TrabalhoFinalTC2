@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { APIconnectionService } from '../apiconnection.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   formLogin!: FormGroup;
 
-  constructor() {}
+  constructor(
+    private service: APIconnectionService
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -25,5 +28,13 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onSubmit(): void {}
+  onSubmit(): void {
+    if(this.formLogin.valid){
+      this.service.addAdmin(this.formLogin.value).subscribe(res => {
+        if(res.ok == true){
+          console.log(res)
+        }
+      })
+    }
+  }
 }
