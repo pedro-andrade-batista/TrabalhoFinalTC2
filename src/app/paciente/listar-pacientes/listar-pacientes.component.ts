@@ -8,7 +8,11 @@ import { PacienteService } from 'src/app/paciente.service';
   styleUrls: ['./listar-pacientes.component.css'],
 })
 export class ListarPacientesComponent implements OnInit {
-  listaPacientes: Paciente[];
+  listaPacientes: Paciente[] = [
+    { nome: 'Felipe' },
+    { nome: 'Felipe' },
+    { nome: 'Felipe' },
+  ];
 
   constructor(private service: PacienteService) {}
 
@@ -16,9 +20,9 @@ export class ListarPacientesComponent implements OnInit {
     this.getPacientes();
   }
 
-  getPacientes(){
-    this.service.getPatient().subscribe(res => {
+  getPacientes() {
+    this.service.getPatient().subscribe((res) => {
       this.listaPacientes = res;
-    })
+    });
   }
 }

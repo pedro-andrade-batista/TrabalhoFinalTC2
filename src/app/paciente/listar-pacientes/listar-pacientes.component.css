@@ -1,16 +1,26 @@
 div {
   display: flex;
   justify-content: center;
-  margin-top: 6rem;
+  padding-top: 14rem;
 }
 
 table {
+  border-collapse: collapse;
   text-align: center;
-  border: 1px solid;
+}
+
+th {
+  font-weight: bold;
+  text-align: left;
+}
+
+tr {
+  border-bottom: 1px solid black;
 }
 
 td {
-  border: 1px solid;
+  text-align: center;
+  padding: 0.5rem 1rem;
 }
 
 button {
