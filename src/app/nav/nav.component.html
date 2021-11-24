@@ -44,10 +44,11 @@
   <div class="navbar-end">
     <div class="navbar-item">
       <div class="buttons">
-        <a class="button is-primary" routerLink="/register">
+        <a class="button is-primary" *ngIf="!authorized" routerLink="/register">
           <strong>Cadastrar</strong>
         </a>
-        <a class="button is-light" routerLink="/login">Log in</a>
+        <a class="button is-light" *ngIf="!authorized" routerLink="/login">Log in</a>
+        <button class="button is-light" *ngIf="authorized" (click)="logout()">Log out</button>
       </div>
     </div>
   </div>

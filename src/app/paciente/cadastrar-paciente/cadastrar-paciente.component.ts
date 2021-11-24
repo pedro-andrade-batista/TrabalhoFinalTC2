@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { PacienteService } from 'src/app/paciente.service';
 
 @Component({
@@ -10,7 +12,11 @@ import { PacienteService } from 'src/app/paciente.service';
 export class CadastrarPacienteComponent implements OnInit {
   formCadastroPaciente: FormGroup;
 
-  constructor(private service: PacienteService) {}
+  constructor(
+    private service: PacienteService,
+    private toastr: ToastrService,
+    private roteamento: Router
+    ) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -31,8 +37,11 @@ export class CadastrarPacienteComponent implements OnInit {
       this.service
         .addPatient(this.formCadastroPaciente.value)
         .subscribe((res) => {
-          console.log(res);
+          this.toastr.success("O cadastro foi realizado com sucesso");
+          this.roteamento.navigate(["/listpatients"])
         });
     }
   }
+
+  
 }

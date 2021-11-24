@@ -1,7 +1,7 @@
 export interface Medico {
-    id: string;
+    id: number;
     nome: string;
-    idEspecialidade:string;
+    idEspecialidade:number;
     dataCadastro:string;
   }
   

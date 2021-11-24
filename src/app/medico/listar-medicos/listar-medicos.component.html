@@ -13,11 +13,12 @@
       <tr *ngFor="let medico of listaMedicos">
         <td>{{ medico.nome }}</td>
         <td>{{ medico.dataCadastro }}</td>
-        <td>{{ medico.idEspecialidade }}</td>
+        <td>{{ listaEspecialidades[medico.idEspecialidade - 1].nome}}</td>
+        
         <td>
           <button class="btnPerfil">Exibir</button>
-          <button class="btnEditar">Atualizar</button>
-          <button class="btnDeletar">Deletar</button>
+          <button class="btnEditar" >Atualizar</button>
+          <button class="btnDeletar" (click)="removeDoctor(medico.id)">Deletar</button>
         </td>
       </tr>
     </tbody>

@@ -14,9 +14,10 @@
     <label class="teste" for="dataNascimento"
       >Especialidade
       <div class="select">
-        <select>
-          <option value="2">especialidade 2</option>
-          <option value="6">especialidade 6</option>
+        <select formControlName="idEspecialidade">
+          <ng-container *ngFor="let especialidade of listaEspecialidades">
+            <option value={{especialidade.id}}>{{especialidade.nome}}</option>
+          </ng-container>
         </select>
       </div></label
     >

@@ -24,4 +24,9 @@ export class PacienteService {
       observe: 'response',
     });
   }
+
+  public removePatient(id: number): Observable<any> {
+    return this.http.delete(`${this.baseURL}pacientes.php?id=${id}`, {observe: "response"});
+  }
+
 }

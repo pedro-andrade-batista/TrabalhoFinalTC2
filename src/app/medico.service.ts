@@ -17,11 +17,16 @@ export class MedicoService {
   }
 
   public addDoctor(doctor: Medico): Observable<any> {
+    console.log(doctor);
     let body = new HttpParams();
     body = body.set('nome', doctor.nome);
     body = body.set('idEspecialidade', doctor.idEspecialidade);
     return this.http.post(`${this.baseURL}medicos.php`, body, {
       observe: 'response',
     });
+  }
+
+  public removeDoctor(id: number): Observable<any> {
+    return this.http.delete(`${this.baseURL}medicos.php?id=${id}`, {observe: "response"});
   }
 }
