@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding-top: 12rem;
+}
+
+h1 {
+  margin-bottom: 4rem;
+  font-size: 1.5rem;
+}
+
+.nomeLabel {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 350px;
+}
+
+.teste {
+  width: 200px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  margin-top: 1rem;
+  width: 101px;
+}

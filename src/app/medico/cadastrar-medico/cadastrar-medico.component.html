@@ -1,1 +1,26 @@
-<p>cadastrar-medico works!</p>
+<div class="container">
+  <h1><b>Cadastrar Paciente</b></h1>
+
+  <form [formGroup]="formCadastroMedico" (ngSubmit)="onSubmit()">
+    <label class="nomeLabel" for="nome"
+      >Nome
+      <input
+        class="input is-primary"
+        id="nome"
+        type="text"
+        formControlName="nome"
+    /></label>
+
+    <label class="teste" for="dataNascimento"
+      >Especialidade
+      <div class="select">
+        <select>
+          <option value="2">especialidade 2</option>
+          <option value="6">especialidade 6</option>
+        </select>
+      </div></label
+    >
+
+    <button class="button" type="submit">Cadastrar</button>
+  </form>
+</div>

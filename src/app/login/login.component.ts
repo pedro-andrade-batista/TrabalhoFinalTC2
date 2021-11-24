@@ -8,11 +8,9 @@ import { APIconnectionService } from '../apiconnection.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  formLogin!: FormGroup;
+  formLogin: FormGroup;
 
-  constructor(
-    private service: APIconnectionService
-  ) {}
+  constructor(private service: APIconnectionService) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -29,15 +27,15 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if(this.formLogin.valid){
-      this.service.login(this.formLogin.value).subscribe(res => {
-        console.log(res.body.token)
-        if(res.body.token ){
-          sessionStorage.setItem("token", res.body.token);
+    if (this.formLogin.valid) {
+      this.service.login(this.formLogin.value).subscribe((res) => {
+        console.log(res.body.token);
+        if (res.body.token) {
+          sessionStorage.setItem('token', res.body.token);
           // sessionStorage.setItem("expires", res["expires"])
-          console.log("logado")
+          console.log('logado');
         }
-      })
+      });
     }
   }
 }

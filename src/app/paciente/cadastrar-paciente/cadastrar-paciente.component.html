@@ -1,1 +1,25 @@
-<p>cadastrar-paciente works!</p>
+<div>
+  <h1><b>Cadastrar Paciente</b></h1>
+
+  <form [formGroup]="formCadastroPaciente" (ngSubmit)="onSubmit()">
+    <label for="nome"
+      >Nome
+      <input
+        class="input is-primary"
+        id="nome"
+        type="text"
+        formControlName="nome"
+    /></label>
+
+    <label for="dataNascimento"
+      >Data de Nascimento
+      <input
+        class="input is-primary"
+        id="dataNascimento"
+        type="date"
+        formControlName="dataNascimento"
+    /></label>
+
+    <button class="button" type="submit">Cadastrar</button>
+  </form>
+</div>
