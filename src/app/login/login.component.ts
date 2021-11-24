@@ -31,8 +31,11 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     if(this.formLogin.valid){
       this.service.login(this.formLogin.value).subscribe(res => {
-        if(res.ok == true){
-          console.log(res)
+        console.log(res.body.token)
+        if(res.body.token ){
+          sessionStorage.setItem("token", res.body.token);
+          // sessionStorage.setItem("expires", res["expires"])
+          console.log("logado")
         }
       })
     }

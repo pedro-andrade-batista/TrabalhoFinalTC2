@@ -1,0 +1,26 @@
+<div>
+    <table>
+      <thead>
+        <tr>
+          <td><b>Nome</b></td>
+          <td><b>Especialidade</b></td>
+          <td><b>Data de Cadastro</b></td>
+          <td><b>Ações</b></td>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr *ngFor="let medico of listaMedicos">
+          <td>{{ medico.nome }}</td>
+          <td>{{ medico.idEspecialidade }}</td>
+          <td>{{ medico.dataCadastro }}</td>
+          <td>
+            <button class="btnPerfil">Exibir</button>
+            <button class="btnEditar">Atualizar</button>
+            <button class="btnDeletar">Deletar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

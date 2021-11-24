@@ -1,4 +1,6 @@
 export interface Paciente {
-  _id?: string;
+  id: string;
   nome: string;
+  dataNascimento:string;
+  dataCadastro:string;
 }

@@ -8,11 +8,7 @@ import { PacienteService } from 'src/app/paciente.service';
   styleUrls: ['./listar-pacientes.component.css'],
 })
 export class ListarPacientesComponent implements OnInit {
-  listaPacientes: Paciente[] = [
-    { nome: 'Felipe' },
-    { nome: 'Felipe' },
-    { nome: 'Felipe' },
-  ];
+  listaPacientes: Paciente[];
 
   constructor(private service: PacienteService) {}
 
