@@ -32,7 +32,6 @@ export class ListarMedicosComponent implements OnInit {
   getMedicos() {
     this.service.getDoctors().subscribe((res) => {
       this.listaMedicos = res;
-      console.log(res)
     });
   }
 
@@ -42,7 +41,6 @@ export class ListarMedicosComponent implements OnInit {
       this.listaEspecialidades.sort(function (a,b) {
         return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
       })
-      console.log(res)
     });
   }
 

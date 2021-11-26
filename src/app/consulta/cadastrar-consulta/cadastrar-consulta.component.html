@@ -5,9 +5,9 @@
     <label class="medicoLabel" for="medico"
       >Médico
       <div class="select">
-        <select formControlName="">
-          <ng-container *ngFor="">
-            <option value=""></option>
+        <select formControlName="idMedico">
+          <ng-container *ngFor="let doctor of listaMedicos">
+            <option value="{{ doctor.id }}"> {{ doctor.nome }} </option>
           </ng-container>
         </select></div
     ></label>
@@ -15,9 +15,9 @@
     <label class="pacienteLabel" for="dataNascimento"
       >Paciente
       <div class="select">
-        <select formControlName="">
-          <ng-container *ngFor="">
-            <option value=""></option>
+        <select formControlName="idPaciente">
+          <ng-container *ngFor="let patient of listaPacientes">
+            <option value="{{ patient.id }}">{{ patient.nome }}</option>
           </ng-container>
         </select></div
     ></label>
