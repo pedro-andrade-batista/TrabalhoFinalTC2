@@ -1,0 +1,45 @@
+<div class="container">
+  <h1><b>Cadastrar Consulta</b></h1>
+
+  <form [formGroup]="formCadastroConsulta" (ngSubmit)="onSubmit()">
+    <label class="medicoLabel" for="medico"
+      >Médico
+      <div class="select">
+        <select formControlName="">
+          <ng-container *ngFor="">
+            <option value=""></option>
+          </ng-container>
+        </select></div
+    ></label>
+
+    <label class="pacienteLabel" for="dataNascimento"
+      >Paciente
+      <div class="select">
+        <select formControlName="">
+          <ng-container *ngFor="">
+            <option value=""></option>
+          </ng-container>
+        </select></div
+    ></label>
+
+    <label class="label" for="dataConsulta"
+      >Data da consulta
+      <input
+        class="input is-primary"
+        id="dataConsulta"
+        type="date"
+        formControlName="dataConsulta"
+    /></label>
+
+    <label class="label" for="horaConsulta"
+      >Hora da consulta
+      <input
+        class="input is-primary"
+        id="horaConsulta"
+        type="time"
+        formControlName="horaConsulta"
+    /></label>
+
+    <button class="button" type="submit">Cadastrar</button>
+  </form>
+</div>

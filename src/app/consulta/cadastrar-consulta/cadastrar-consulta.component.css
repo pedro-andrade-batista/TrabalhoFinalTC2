@@ -11,7 +11,7 @@ h1 {
   font-size: 1.5rem;
 }
 
-.nomeLabel {
+.label {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
@@ -21,8 +21,14 @@ input {
   width: 350px;
 }
 
-.especialidadeLabel {
+.pacienteLabel {
   width: 200px;
+  margin-bottom: 1rem;
+}
+
+.medicoLabel {
+  width: 200px;
+  margin-bottom: 1rem;
 }
 
 form {

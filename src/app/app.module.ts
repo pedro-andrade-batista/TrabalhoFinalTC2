@@ -17,6 +17,7 @@ import { CadastrarPacienteComponent } from './paciente/cadastrar-paciente/cadast
 import { LogInterceptorInterceptor } from './log-interceptor.interceptor';
 import { ListarMedicosComponent } from './medico/listar-medicos/listar-medicos.component';
 import { CadastrarMedicoComponent } from './medico/cadastrar-medico/cadastrar-medico.component';
+import { CadastrarConsultaComponent } from './consulta/cadastrar-consulta/cadastrar-consulta.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CadastrarMedicoComponent } from './medico/cadastrar-medico/cadastrar-me
     ListarPacientesComponent,
     CadastrarPacienteComponent,
     ListarMedicosComponent,
-    CadastrarMedicoComponent
+    CadastrarMedicoComponent,
+    CadastrarConsultaComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,15 +39,15 @@ import { CadastrarMedicoComponent } from './medico/cadastrar-medico/cadastrar-me
     HttpClientModule,
     ReactiveFormsModule,
     CommonModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LogInterceptorInterceptor,
-      multi: true
-    }
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })

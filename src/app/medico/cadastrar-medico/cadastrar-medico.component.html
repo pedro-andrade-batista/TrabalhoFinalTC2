@@ -1,5 +1,5 @@
 <div class="container">
-  <h1><b>Cadastrar Paciente</b></h1>
+  <h1><b>Cadastrar Médico</b></h1>
 
   <form [formGroup]="formCadastroMedico" (ngSubmit)="onSubmit()">
     <label class="nomeLabel" for="nome"
@@ -11,12 +11,14 @@
         formControlName="nome"
     /></label>
 
-    <label class="teste" for="dataNascimento"
+    <label class="especialidadeLabel" for="dataNascimento"
       >Especialidade
       <div class="select">
         <select formControlName="idEspecialidade">
           <ng-container *ngFor="let especialidade of listaEspecialidades">
-            <option value={{especialidade.id}}>{{especialidade.nome}}</option>
+            <option value="{{ especialidade.id }}">
+              {{ especialidade.nome }}
+            </option>
           </ng-container>
         </select>
       </div></label

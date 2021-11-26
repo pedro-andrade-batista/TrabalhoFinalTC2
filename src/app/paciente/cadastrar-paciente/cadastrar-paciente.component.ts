@@ -16,7 +16,7 @@ export class CadastrarPacienteComponent implements OnInit {
     private service: PacienteService,
     private toastr: ToastrService,
     private roteamento: Router
-    ) {}
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -37,11 +37,9 @@ export class CadastrarPacienteComponent implements OnInit {
       this.service
         .addPatient(this.formCadastroPaciente.value)
         .subscribe((res) => {
-          this.toastr.success("O cadastro foi realizado com sucesso");
-          this.roteamento.navigate(["/listpatients"])
+          this.toastr.success('O cadastro foi realizado com sucesso');
+          this.roteamento.navigate(['/listpatients']);
         });
     }
   }
-
-  
 }

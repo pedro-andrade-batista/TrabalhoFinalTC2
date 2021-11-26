@@ -37,7 +37,9 @@
         </div>
       </div>
 
-      <a class="navbar-item">Adicionar Consulta</a>
+      <a class="navbar-item" routerLink="/registerconsultation"
+        >Adicionar Consulta</a
+      >
     </div>
   </div>
 
@@ -47,8 +49,12 @@
         <a class="button is-primary" *ngIf="!authorized" routerLink="/register">
           <strong>Cadastrar</strong>
         </a>
-        <a class="button is-light" *ngIf="!authorized" routerLink="/login">Log in</a>
-        <button class="button is-light" *ngIf="authorized" (click)="logout()">Log out</button>
+        <a class="button is-light" *ngIf="!authorized" routerLink="/login"
+          >Log in</a
+        >
+        <button class="button is-light" *ngIf="authorized" (click)="logout()">
+          Log out
+        </button>
       </div>
     </div>
   </div>
