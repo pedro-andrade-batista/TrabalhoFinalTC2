@@ -51,7 +51,7 @@ export class CadastrarConsultaComponent implements OnInit {
           this.roteamento.navigate(["/listpatients"])
         }
         else{
-          this.toastr.error("O cadastro não foi realizado!", res.body);
+          this.toastr.error("O cadastro não foi realizado!", res.body.msg);
         }
       });
     }

@@ -41,6 +41,7 @@ export class ListarPacientesComponent implements OnInit {
   }
 
   exibirModal() {
+    console.log('foiiiii')
     this.isOpen = true;
   }
 }
