@@ -18,6 +18,7 @@ import { LogInterceptorInterceptor } from './log-interceptor.interceptor';
 import { ListarMedicosComponent } from './medico/listar-medicos/listar-medicos.component';
 import { CadastrarMedicoComponent } from './medico/cadastrar-medico/cadastrar-medico.component';
 import { CadastrarConsultaComponent } from './consulta/cadastrar-consulta/cadastrar-consulta.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CadastrarConsultaComponent } from './consulta/cadastrar-consulta/cadast
     ListarMedicosComponent,
     CadastrarMedicoComponent,
     CadastrarConsultaComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

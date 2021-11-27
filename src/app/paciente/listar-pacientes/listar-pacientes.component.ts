@@ -11,12 +11,13 @@ import { PacienteService } from 'src/app/paciente.service';
 })
 export class ListarPacientesComponent implements OnInit {
   listaPacientes: Paciente[];
+  isOpen = false;
 
   constructor(
     private service: PacienteService,
     private toastr: ToastrService,
     private roteamento: Router
-    ) {}
+  ) {}
 
   ngOnInit(): void {
     this.getPacientes();
@@ -28,14 +29,18 @@ export class ListarPacientesComponent implements OnInit {
     });
   }
 
-  removePatient(id: number){
-    this.service.removePatient(id).subscribe(res => {
-      if(res.ok == true) {
-        this.toastr.success("A remoção foi realizada com sucesso");
+  removePatient(id: number) {
+    this.service.removePatient(id).subscribe((res) => {
+      if (res.ok == true) {
+        this.toastr.success('A remoção foi realizada com sucesso');
         this.ngOnInit();
       } else {
-        this.toastr.error("A remoção não foi realizada!");
+        this.toastr.error('A remoção não foi realizada!');
       }
     });
+  }
+
+  exibirModal() {
+    this.isOpen = true;
   }
 }

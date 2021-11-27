@@ -15,11 +15,19 @@
         <td>{{ paciente.dataNascimento }}</td>
         <td>{{ paciente.dataCadastro }}</td>
         <td>
-          <button class="btnPerfil">Exibir</button>
+          <button class="btnPerfil" (click)="exibirModal()">Exibir</button>
           <button class="btnEditar">Atualizar</button>
-          <button class="btnDeletar" (click)="removePatient(paciente.id)">Deletar</button>
+          <button class="btnDeletar" (click)="removePatient(paciente.id)">
+            Deletar
+          </button>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
+
+<!--
+<ng-container *ngIf="isOpen">
+  <app-modal [ngClass]="is-active"></app-modal>
+</ng-container>
+-->

@@ -8,17 +8,17 @@ import { Medico } from 'src/app/models/medico.model';
 @Component({
   selector: 'app-listar-medicos',
   templateUrl: './listar-medicos.component.html',
-  styleUrls: ['./listar-medicos.component.css']
+  styleUrls: ['./listar-medicos.component.css'],
 })
 export class ListarMedicosComponent implements OnInit {
-  listaMedicos: Medico[]
-  listaEspecialidades: Especialidade[]
+  listaMedicos: Medico[];
+  listaEspecialidades: Especialidade[];
 
   constructor(
     private service: MedicoService,
     private serviceEspecialidade: EspecialidadesService,
-    private toastr: ToastrService,
-  ) { }
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.getMedicos();
@@ -38,23 +38,21 @@ export class ListarMedicosComponent implements OnInit {
   getEspecialidades() {
     this.serviceEspecialidade.getEspecialidades().subscribe((res) => {
       this.listaEspecialidades = res;
-      this.listaEspecialidades.sort(function (a,b) {
+      this.listaEspecialidades.sort(function (a, b) {
         return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
-      })
+      });
     });
   }
 
-  removeDoctor(id: number){
-    this.service.removeDoctor(id).subscribe(res => {
-
-      console.log(res)
-      if(res.ok == true) {
-        this.toastr.success("A remoção foi realizada com sucesso");
+  removeDoctor(id: number) {
+    this.service.removeDoctor(id).subscribe((res) => {
+      console.log(res);
+      if (res.ok == true) {
+        this.toastr.success('A remoção foi realizada com sucesso');
         this.ngOnInit();
       } else {
-        this.toastr.error("A remoção não foi realizada!");
+        this.toastr.error('A remoção não foi realizada!');
       }
     });
   }
-
 }
