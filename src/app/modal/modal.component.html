@@ -1,8 +1,21 @@
 <div class="modal is-active">
-  <div class="modal-background"></div>
+  <div class="modal-background" (click)="cancel()"></div>
   <div class="modal-content">
-    <!-- Any other Bulma elements you want -->
-    <h1>MODAL ABERTO</h1>
+    <div class="modal-card">
+      <section class="modal-card-body">
+        <ng-container *ngIf="exibir">
+          <app-conteudo-modal-exibir></app-conteudo-modal-exibir>
+        </ng-container>
+
+        <ng-container *ngIf="!exibir">
+          <app-modal-editar-paciente></app-modal-editar-paciente>
+        </ng-container>
+      </section>
+    </div>
   </div>
-  <button class="modal-close is-large" aria-label="close"></button>
+  <button
+    class="modal-close is-large"
+    aria-label="close"
+    (click)="cancel()"
+  ></button>
 </div>

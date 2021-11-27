@@ -19,6 +19,9 @@ import { ListarMedicosComponent } from './medico/listar-medicos/listar-medicos.c
 import { CadastrarMedicoComponent } from './medico/cadastrar-medico/cadastrar-medico.component';
 import { CadastrarConsultaComponent } from './consulta/cadastrar-consulta/cadastrar-consulta.component';
 import { ModalComponent } from './modal/modal.component';
+import { ConteudoModalExibirComponent } from './modal/conteudo-modal-exibir/conteudo-modal-exibir.component';
+import { ModalEditarPacienteComponent } from './modal/modal-editar-paciente/modal-editar-paciente.component';
+import { ModalEditarMedicoComponent } from './modal/modal-editar-medico/modal-editar-medico.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { ModalComponent } from './modal/modal.component';
     CadastrarMedicoComponent,
     CadastrarConsultaComponent,
     ModalComponent,
+    ConteudoModalExibirComponent,
+    ModalEditarPacienteComponent,
+    ModalEditarMedicoComponent,
   ],
   imports: [
     BrowserModule,

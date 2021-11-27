@@ -11,7 +11,9 @@ import { PacienteService } from 'src/app/paciente.service';
 })
 export class ListarPacientesComponent implements OnInit {
   listaPacientes: Paciente[];
-  isOpen = false;
+  pacienteSelecionado: Paciente;
+  isModalDetalhesOpen = false;
+  isModalEditarOpen = false;
 
   constructor(
     private service: PacienteService,
@@ -40,8 +42,12 @@ export class ListarPacientesComponent implements OnInit {
     });
   }
 
-  exibirModal() {
-    console.log('foiiiii')
-    this.isOpen = true;
+  exibirModalDetalhes() {
+    this.isModalDetalhesOpen = true;
+  }
+
+  exibirModalEditar(paciente: Paciente) {
+    this.isModalEditarOpen = true;
+    this.pacienteSelecionado = paciente;
   }
 }

@@ -1,0 +1,25 @@
+<div>
+  <h1><b>Editar Paciente</b></h1>
+
+  <label for="nome"
+    >Nome
+    <input
+      class="input is-primary"
+      id="nome"
+      type="text"
+      formControlName="nome"
+  /></label>
+
+  <form [formGroup]="formEditarPaciente">
+    <label class="label" for="dataNascimento"
+      >Data de Nascimento
+      <input
+        class="input is-primary"
+        id="dataNascimento"
+        type="date"
+        formControlName="dataNascimento"
+    /></label>
+
+    <button class="button" type="submit">Editar</button>
+  </form>
+</div>
