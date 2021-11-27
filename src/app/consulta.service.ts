@@ -23,7 +23,7 @@ export class ConsultaService {
     let data = `${consulta.dataConsulta} ${consulta.horaConsulta}`
     console.log(data);
     body = body.set('idPaciente', consulta.idPaciente);
-    body = body.set('idMédico', consulta.idMedico);
+    body = body.set('idMedico', consulta.idMedico);
     body = body.set('data', data);
     return this.http.post(`${this.baseURL}consultas.php`, body, {
       observe: 'response',

@@ -45,12 +45,13 @@ export class CadastrarConsultaComponent implements OnInit {
   onSubmit(): void {
     if (this.formCadastroConsulta.valid) {
       this.serviceConsulta.addConsulta(this.formCadastroConsulta.value).subscribe((res) => {
+        console.log(res)
         if(res.ok == true){
           this.toastr.success("O cadastro foi realizado com sucesso");
-          this.roteamento.navigate(["/listdoctors"])
+          this.roteamento.navigate(["/listpatients"])
         }
         else{
-          this.toastr.error("O cadastro não foi realizado!");
+          this.toastr.error("O cadastro não foi realizado!", res.body);
         }
       });
     }
@@ -59,14 +60,14 @@ export class CadastrarConsultaComponent implements OnInit {
   getConsultas(){
     this.serviceConsulta.getConsultas().subscribe((res) => {
       // this.listaPacientes = res;
-      console.log(res);
+      // console.log(res);
     });
   }
   getMedicos(){
     this.serviceMedico.getDoctors().subscribe((res) => {
       this.listaMedicos = res;
       this.formCadastroConsulta.get("medicos")?.setValue(res);
-      console.log(res);
+      // console.log(res);
     });
   }
   getPacientes(){
