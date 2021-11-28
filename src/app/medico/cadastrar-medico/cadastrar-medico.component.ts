@@ -33,7 +33,7 @@ export class CadastrarMedicoComponent implements OnInit {
         Validators.required,
         Validators.minLength(4),
       ]),
-      idEspecialidade: new FormControl(null),
+      idEspecialidade: new FormControl(null, [Validators.required]),
     });
   }
 

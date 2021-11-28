@@ -26,6 +26,7 @@ import { ModalExibePacienteComponent } from './modais/modal-exibe-paciente/modal
 import { ModalExibeMedicoComponent } from './modais/modal-exibe-medico/modal-exibe-medico.component';
 import { ModalEditaMedicoComponent } from './modais/modal-edita-medico/modal-edita-medico.component';
 import { ModalEditaPacienteComponent } from './modais/modal-edita-paciente/modal-edita-paciente.component';
+import { DataPipe } from './pipes/data.pipe';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ModalEditaPacienteComponent } from './modais/modal-edita-paciente/modal
     ModalExibeMedicoComponent,
     ModalEditaMedicoComponent,
     ModalEditaPacienteComponent,
+    DataPipe,
   ],
   imports: [
     BrowserModule,
