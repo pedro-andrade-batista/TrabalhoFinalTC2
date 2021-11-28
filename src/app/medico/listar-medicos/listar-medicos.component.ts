@@ -59,8 +59,9 @@ export class ListarMedicosComponent implements OnInit {
     });
   }
 
-  exibirModalDetalhes() {
+  exibirModalDetalhes(medico: Medico) {
     this.isModalDetalhesOpen = true;
+    this.medicoSelecionado = medico;
   }
 
   exibirModalEditar(medico: Medico) {

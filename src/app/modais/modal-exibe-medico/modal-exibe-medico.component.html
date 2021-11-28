@@ -1,41 +1,40 @@
 <div class="modal is-active" id="modalContainer">
-    <div class="modal-background" (click)="cancel()"></div>
-    <div class="modal-content">
-      <div class="modal-card">
-        <section class="modal-card-body">
-            <div>
-                <h1><b>Consultas</b></h1>
-              
-                <table>
-                  <thead>
-                    <tr>
-                      <td><b>Médico</b></td>
-                      <td><b>Paciente</b></td>
-                      <td><b>Data</b></td>
-                      <td><b>Cancelar</b></td>
-                    </tr>
-                  </thead>
-              
-                  <tbody>
-                    <tr>
-                      <td>medico</td>
-                      <td>paciente</td>
-                      <td>data</td>
-              
-                      <td>
-                        <button>Cancelar</button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>              
-        </section>
-      </div>
+  <div class="modal-background" (click)="cancel()"></div>
+  <div class="modal-content">
+    <div class="modal-card">
+      <section class="modal-card-body">
+        <div>
+          <h1><b>Consultas</b></h1>
+
+          <table>
+            <thead>
+              <tr>
+                <td><b>Médico</b></td>
+                <td><b>Paciente</b></td>
+                <td><b>Data</b></td>
+                <td><b>Cancelar</b></td>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let consulta of listaConsultaPaciente">
+                <td>{{ consulta.medico }}</td>
+                <td>{{ consulta.paciente }}</td>
+                <td>{{ consulta.data }}</td>
+
+                <td>
+                  <button (click)="remover(consulta)">Cancelar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
-    <button
-      class="modal-close is-large"
-      aria-label="close"
-      (click)="cancel()"
-    ></button>
   </div>
-  
+  <button
+    class="modal-close is-large"
+    aria-label="close"
+    (click)="cancel()"
+  ></button>
+</div>
