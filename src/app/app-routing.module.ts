@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'listdoctors', component: ListarMedicosComponent },
   { path: 'registerdoctor', component: CadastrarMedicoComponent },
   { path: 'registerconsultation', component: CadastrarConsultaComponent },
+  { path: 'patients', redirectTo: "/listpatients", pathMatch: "prefix"},
 ];
 
 @NgModule({

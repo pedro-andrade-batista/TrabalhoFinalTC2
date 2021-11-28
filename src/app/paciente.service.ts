@@ -29,4 +29,14 @@ export class PacienteService {
     return this.http.delete(`${this.baseURL}pacientes.php?id=${id}`, {observe: "response"});
   }
 
+  public editPatient(patient: Paciente): Observable<any> {
+    let body = new HttpParams();
+    body = body.set('id', patient.id);
+    body = body.set('nome', patient.nome);
+    body = body.set('dataNascimento', patient.dataNascimento);
+    return this.http.put(`${this.baseURL}pacientes.php`, body, {
+      observe: 'response',
+    });
+  }
+
 }
