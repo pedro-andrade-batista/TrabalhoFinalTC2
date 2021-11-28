@@ -13,6 +13,9 @@ import { Medico } from 'src/app/models/medico.model';
 export class ListarMedicosComponent implements OnInit {
   listaMedicos: Medico[];
   listaEspecialidades: Especialidade[];
+  medicoSelecionado: Medico;
+  isModalDetalhesOpen = false;
+  isModalEditarOpen = false;
 
   constructor(
     private service: MedicoService,
@@ -54,5 +57,14 @@ export class ListarMedicosComponent implements OnInit {
         this.toastr.error('A remoção não foi realizada!');
       }
     });
+  }
+
+  exibirModalDetalhes() {
+    this.isModalDetalhesOpen = true;
+  }
+
+  exibirModalEditar(medico: Medico) {
+    this.isModalEditarOpen = true;
+    this.medicoSelecionado = medico;
   }
 }

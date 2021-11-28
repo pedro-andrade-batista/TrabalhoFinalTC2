@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Paciente } from '../models/paciente.model';
+import { Medico } from '../models/medico.model';
 
 @Component({
   selector: 'app-modal',
@@ -9,7 +10,8 @@ import { Paciente } from '../models/paciente.model';
 export class ModalComponent implements OnInit {
   @Output() onClose = new EventEmitter();
   @Input() tipo: Paciente;
-  exibir: boolean = true;
+  exibirDetalhes: boolean = true;
+  editarPaciente: boolean = false;
 
   constructor() {}
 
@@ -24,7 +26,7 @@ export class ModalComponent implements OnInit {
   exibirConsultas() {}
 
   initForm() {
-    this.exibir = false;
+    this.exibirDetalhes = false;
   }
 
   cancel() {

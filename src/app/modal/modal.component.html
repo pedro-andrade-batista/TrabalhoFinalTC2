@@ -3,13 +3,14 @@
   <div class="modal-content">
     <div class="modal-card">
       <section class="modal-card-body">
-        <ng-container *ngIf="exibir">
+        <ng-container *ngIf="exibirDetalhes">
           <app-conteudo-modal-exibir></app-conteudo-modal-exibir>
         </ng-container>
 
-        <ng-container *ngIf="!exibir">
-          <app-modal-editar-paciente [paciente]="tipo"></app-modal-editar-paciente>
-          <!-- <app-modal-editar-medico></app-modal-editar-medico> -->
+        <ng-container *ngIf="!exibirDetalhes">
+          <app-modal-editar-paciente
+            [paciente]="tipo"
+          ></app-modal-editar-paciente>
         </ng-container>
       </section>
     </div>
