@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Medico } from './models/medico.model';
+import { Medico } from '../models/medico.model';
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +27,9 @@ export class MedicoService {
   }
 
   public removeDoctor(id: number): Observable<any> {
-    return this.http.delete(`${this.baseURL}medicos.php?id=${id}`, {observe: "response"});
+    return this.http.delete(`${this.baseURL}medicos.php?id=${id}`, {
+      observe: 'response',
+    });
   }
 
   public editDoctor(medico: Medico): Observable<any> {

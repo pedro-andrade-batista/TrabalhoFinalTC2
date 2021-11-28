@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { EspecialidadesService } from 'src/app/especialidades.service';
-import { MedicoService } from 'src/app/medico.service';
+import { EspecialidadesService } from 'src/app/services/especialidades.service';
+import { MedicoService } from 'src/app/services/medico.service';
 import { Especialidade } from 'src/app/models/especialidade.model';
 import { Medico } from 'src/app/models/medico.model';
 

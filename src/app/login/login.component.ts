@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { APIconnectionService } from '../apiconnection.service';
+import { APIconnectionService } from '../services/apiconnection.service';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private service: APIconnectionService,
     private toastr: ToastrService,
-    private roteamento : Router,
-    ) {}
+    private roteamento: Router
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -39,11 +39,10 @@ export class LoginComponent implements OnInit {
         if (res.body.token) {
           sessionStorage.setItem('token', res.body.token);
           // sessionStorage.setItem("expires", res["expires"])
-          this.toastr.success("Sucesso", "Login realizado com sucesso");
-          this.roteamento.navigate(["/listpatients"]);
-        }
-        else{
-          this.toastr.error("Falha", "Login ou senha inválidos");
+          this.toastr.success('Sucesso', 'Login realizado com sucesso');
+          this.roteamento.navigate(['/listpatients']);
+        } else {
+          this.toastr.error('Falha', 'Login ou senha inválidos');
         }
       });
     }

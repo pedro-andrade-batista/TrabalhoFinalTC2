@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { PacienteService } from 'src/app/paciente.service';
+import { PacienteService } from 'src/app/services/paciente.service';
 
 @Component({
   selector: 'app-cadastrar-paciente',

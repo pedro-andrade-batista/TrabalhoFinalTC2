@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { ConsultaService } from 'src/app/consulta.service';
-import { MedicoService } from 'src/app/medico.service';
+import { ConsultaService } from 'src/app/services/consulta.service';
+import { MedicoService } from 'src/app/services/medico.service';
 import { Consulta } from 'src/app/models/consulta.model';
 import { ConsultaPesquisada } from 'src/app/models/consultaPesquisada.model';
 import { Medico } from 'src/app/models/medico.model';
 import { Paciente } from 'src/app/models/paciente.model';
-import { PacienteService } from 'src/app/paciente.service';
+import { PacienteService } from 'src/app/services/paciente.service';
 
 @Component({
   selector: 'app-modal-exibe-medico',

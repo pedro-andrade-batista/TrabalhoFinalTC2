@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { APIconnectionService } from '../apiconnection.service';
+import { APIconnectionService } from '../services/apiconnection.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -10,9 +10,7 @@ import { APIconnectionService } from '../apiconnection.service';
 export class CadastroComponent implements OnInit {
   formCadastro: FormGroup;
 
-  constructor(
-    private service: APIconnectionService
-    ){}
+  constructor(private service: APIconnectionService) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -29,12 +27,12 @@ export class CadastroComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if(this.formCadastro.valid){
-      this.service.addAdmin(this.formCadastro.value).subscribe(res => {
-        if(res.ok == true){
-          console.log(res)
+    if (this.formCadastro.valid) {
+      this.service.addAdmin(this.formCadastro.value).subscribe((res) => {
+        if (res.ok == true) {
+          console.log(res);
         }
-      })
+      });
     }
   }
 }

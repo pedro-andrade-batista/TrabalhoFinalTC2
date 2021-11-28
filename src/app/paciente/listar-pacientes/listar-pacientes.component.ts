@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Paciente } from 'src/app/models/paciente.model';
-import { PacienteService } from 'src/app/paciente.service';
+import { PacienteService } from 'src/app/services/paciente.service';
 
 @Component({
   selector: 'app-listar-pacientes',
