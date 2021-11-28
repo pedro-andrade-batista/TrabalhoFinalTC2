@@ -29,3 +29,11 @@
     </tbody>
   </table>
 </div>
+
+<ng-container *ngIf="isModalDetalhesOpen">
+  <app-modal-exibe-medico (onClose)="isModalDetalhesOpen = false"></app-modal-exibe-medico>
+</ng-container>
+
+<ng-container *ngIf="isModalEditarOpen">
+  <app-modal-edita-medico (onClose)="isModalEditarOpen = false" [medico]="medicoSelecionado"></app-modal-edita-medico>
+</ng-container>

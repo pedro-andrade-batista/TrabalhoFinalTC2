@@ -3,5 +3,6 @@ export interface Consulta {
     idMedico: number,
     idPaciente: number,
     dataConsulta: string,
-    horaConsulta: string
+    horaConsulta: string,
+    data: string
 }

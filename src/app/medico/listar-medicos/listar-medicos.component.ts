@@ -66,5 +66,6 @@ export class ListarMedicosComponent implements OnInit {
   exibirModalEditar(medico: Medico) {
     this.isModalEditarOpen = true;
     this.medicoSelecionado = medico;
+    console.log(this.medicoSelecionado);
   }
 }

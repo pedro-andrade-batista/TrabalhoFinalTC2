@@ -15,7 +15,7 @@
         <td>{{ paciente.dataNascimento }}</td>
         <td>{{ paciente.dataCadastro }}</td>
         <td>
-          <button class="btnPerfil" (click)="exibirModalDetalhes()">
+          <button class="btnPerfil" (click)="exibirModalDetalhes(paciente)">
             Exibir
           </button>
           <button class="btnEditar" (click)="exibirModalEditar(paciente)">
@@ -31,12 +31,16 @@
 </div>
 
 <ng-container *ngIf="isModalDetalhesOpen">
-  <app-modal (onClose)="isModalDetalhesOpen = false"></app-modal>
+  <app-modal-exibe-paciente (onClose)="isModalDetalhesOpen = false" [paciente]="pacienteSelecionado"></app-modal-exibe-paciente>
 </ng-container>
-
+<!--
 <ng-container *ngIf="isModalEditarOpen">
   <app-modal
     (onClose)="isModalEditarOpen = false"
     [tipo]="pacienteSelecionado"
   ></app-modal>
+</ng-container>-->
+
+<ng-container *ngIf="isModalEditarOpen">
+  <app-modal-edita-paciente (onClose)="isModalEditarOpen = false" [paciente]="pacienteSelecionado"></app-modal-edita-paciente>
 </ng-container>

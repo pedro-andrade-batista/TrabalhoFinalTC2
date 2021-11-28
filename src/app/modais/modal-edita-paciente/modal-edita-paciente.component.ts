@@ -6,20 +6,19 @@ import { Paciente } from 'src/app/models/paciente.model';
 import { PacienteService } from 'src/app/paciente.service';
 
 @Component({
-  selector: 'app-modal-editar-paciente',
-  templateUrl: './modal-editar-paciente.component.html',
-  styleUrls: ['./modal-editar-paciente.component.css'],
+  selector: 'app-modal-edita-paciente',
+  templateUrl: './modal-edita-paciente.component.html',
+  styleUrls: ['./modal-edita-paciente.component.css']
 })
-export class ModalEditarPacienteComponent implements OnInit {
+export class ModalEditaPacienteComponent implements OnInit {
   formEditarPaciente: FormGroup;
   @Input() paciente: Paciente;
   @Output() onClose = new EventEmitter();
-
   constructor(
     private servicePaciente: PacienteService,
     private toastr: ToastrService,
     private roteamento : Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.initForm();

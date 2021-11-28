@@ -29,4 +29,14 @@ export class MedicoService {
   public removeDoctor(id: number): Observable<any> {
     return this.http.delete(`${this.baseURL}medicos.php?id=${id}`, {observe: "response"});
   }
+
+  public editDoctor(medico: Medico): Observable<any> {
+    let body = new HttpParams();
+    body = body.set('id', medico.id);
+    body = body.set('nome', medico.nome);
+    body = body.set('idEspecialidade', medico.idEspecialidade);
+    return this.http.put(`${this.baseURL}medicos.php`, body, {
+      observe: 'response',
+    });
+  }
 }

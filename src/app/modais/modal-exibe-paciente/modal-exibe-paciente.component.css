@@ -1,0 +1,68 @@
+@keyframes appear {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  #modalContainer {
+    animation: appear 0.5s ease-in-out;
+  }
+  
+  .modal-card-body {
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    min-height: 350px;
+    animation: appear 0.75s ease-in-out;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  
+  table {
+    width: 550px;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  th {
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  tr {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.7);
+  }
+  
+  td {
+    text-align: center;
+    padding: 0.5rem 1rem;
+  }
+  
+  button {
+    width: 80px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    border-radius: 3px;
+    margin: 0.25rem;
+    color: white;
+    background: rgba(226, 106, 106, 1);
+  }
+  
+  button:hover {
+    cursor: pointer;
+    filter: brightness(0.8);
+  }
+  

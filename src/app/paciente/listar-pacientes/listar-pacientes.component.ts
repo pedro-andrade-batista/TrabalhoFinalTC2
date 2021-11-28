@@ -28,7 +28,7 @@ export class ListarPacientesComponent implements OnInit {
   getPacientes() {
     this.service.getPatient().subscribe((res) => {
       this.listaPacientes = res;
-      console.log(res);
+      // console.log(res);
     });
   }
 
@@ -43,13 +43,15 @@ export class ListarPacientesComponent implements OnInit {
     });
   }
 
-  exibirModalDetalhes() {
+  exibirModalDetalhes(paciente: Paciente) {
     this.isModalDetalhesOpen = true;
+    this.pacienteSelecionado = paciente;
   }
 
   exibirModalEditar(paciente: Paciente) {
     this.isModalEditarOpen = true;
     this.pacienteSelecionado = paciente;
+    // console.log(this.pacienteSelecionado);
   }
 
   ngOnChanges(): void {
