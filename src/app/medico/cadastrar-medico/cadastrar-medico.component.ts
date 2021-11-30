@@ -40,7 +40,7 @@ export class CadastrarMedicoComponent implements OnInit {
   onSubmit(): void {
     if (this.formCadastroMedico.valid) {
       this.service.addDoctor(this.formCadastroMedico.value).subscribe((res) => {
-        if (res.ok == true) {
+        if (!res.body.msg) {
           this.toastr.success('O cadastro foi realizado com sucesso');
           this.roteamento.navigate(['/listdoctors']);
         } else {

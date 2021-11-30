@@ -28,7 +28,6 @@ export class CadastrarConsultaComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
-    // this.getConsultas();
     this.getMedicos();
     this.getPacientes();
   }
@@ -48,7 +47,7 @@ export class CadastrarConsultaComponent implements OnInit {
         .addConsulta(this.formCadastroConsulta.value)
         .subscribe((res) => {
           console.log(res);
-          if (res.ok == true) {
+          if (!res.body.msg) {
             this.toastr.success('O cadastro foi realizado com sucesso');
             this.roteamento.navigate(['/listpatients']);
           } else {
@@ -57,24 +56,14 @@ export class CadastrarConsultaComponent implements OnInit {
         });
     }
   }
-
-  getConsultas() {
-    this.serviceConsulta.getConsultas().subscribe((res) => {
-      // this.listaPacientes = res;
-      // console.log(res);
-    });
-  }
   getMedicos() {
     this.serviceMedico.getDoctors().subscribe((res) => {
       this.listaMedicos = res;
-      this.formCadastroConsulta.get('medicos')?.setValue(res);
-      // console.log(res);
     });
   }
   getPacientes() {
     this.servicePaciente.getPatient().subscribe((res) => {
       this.listaPacientes = res;
-      // console.log(res);
     });
   }
 }

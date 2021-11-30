@@ -12,7 +12,7 @@ export class ConsultaService {
 
   constructor(private http: HttpClient) {}
 
-  getConsultas(): Observable<any> {
+  getConsultas(): Observable<Consulta[]> {
     return this.http.get<Consulta[]>(`${this.baseURL}consultas.php`);
   }
 

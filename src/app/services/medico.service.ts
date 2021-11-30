@@ -17,7 +17,6 @@ export class MedicoService {
   }
 
   public addDoctor(doctor: Medico): Observable<any> {
-    console.log(doctor);
     let body = new HttpParams();
     body = body.set('nome', doctor.nome);
     body = body.set('idEspecialidade', doctor.idEspecialidade);

@@ -49,8 +49,7 @@ export class ListarMedicosComponent implements OnInit {
 
   removeDoctor(id: number) {
     this.service.removeDoctor(id).subscribe((res) => {
-      console.log(res);
-      if (res.ok == true) {
+      if (res.body.status == "OK") {
         this.toastr.success('A remoção foi realizada com sucesso');
         this.ngOnInit();
       } else {
@@ -67,6 +66,5 @@ export class ListarMedicosComponent implements OnInit {
   exibirModalEditar(medico: Medico) {
     this.isModalEditarOpen = true;
     this.medicoSelecionado = medico;
-    console.log(this.medicoSelecionado);
   }
 }

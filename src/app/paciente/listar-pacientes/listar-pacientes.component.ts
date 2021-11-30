@@ -28,13 +28,12 @@ export class ListarPacientesComponent implements OnInit {
   getPacientes() {
     this.service.getPatient().subscribe((res) => {
       this.listaPacientes = res;
-      // console.log(res);
     });
   }
 
   removePatient(id: number) {
     this.service.removePatient(id).subscribe((res) => {
-      if (res.ok == true) {
+      if (res.body.status == "OK") {
         this.toastr.success('A remoção foi realizada com sucesso');
         this.ngOnInit();
       } else {
@@ -51,7 +50,6 @@ export class ListarPacientesComponent implements OnInit {
   exibirModalEditar(paciente: Paciente) {
     this.isModalEditarOpen = true;
     this.pacienteSelecionado = paciente;
-    // console.log(this.pacienteSelecionado);
   }
 
   ngOnChanges(): void {

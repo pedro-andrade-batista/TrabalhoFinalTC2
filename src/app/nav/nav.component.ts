@@ -32,7 +32,6 @@ export class NavComponent implements OnInit {
 
   logout(): void{
     this.authorized = false;
-    console.log('entrou')
     sessionStorage.clear();
     this.roteamento.navigate(["/login"]);
   }

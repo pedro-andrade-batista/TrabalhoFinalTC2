@@ -27,7 +27,6 @@ export class ModalEditaMedicoComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
-    console.log(this.medico);
     this.getEspecialidades();
   }
 
@@ -45,11 +44,9 @@ export class ModalEditaMedicoComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('entrou');
     if (this.formEditarMedico.valid) {
       this.service.editDoctor(this.formEditarMedico.value).subscribe((res) => {
-        console.log(res);
-        if (res.ok == true) {
+        if (!res.body.msg) {
           this.toastr.success('A edição foi realizada com sucesso');
           this.roteamento.navigate(['/listdoctors']);
         } else {

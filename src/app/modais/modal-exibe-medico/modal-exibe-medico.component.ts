@@ -17,7 +17,7 @@ export class ModalExibeMedicoComponent implements OnInit {
   @Input() medico: Medico;
   @Output() onClose = new EventEmitter();
   listaConsultas: Consulta[];
-  listaPacientes: Paciente[];
+  listaPacientes: Paciente[] = [];
   listaConsultaPaciente: Array<any> = [];
 
   constructor(
@@ -67,7 +67,7 @@ export class ModalExibeMedicoComponent implements OnInit {
 
   remover(consulta: Consulta) {
     this.serviceConsulta.removeConsulta(consulta).subscribe((res) => {
-      if (res.ok == true) {
+      if (res.body.status == "OK") {
         this.toastr.success('A exclusão foi realizada com sucesso');
       } else {
         this.toastr.error('A exclusão não foi realizada!');

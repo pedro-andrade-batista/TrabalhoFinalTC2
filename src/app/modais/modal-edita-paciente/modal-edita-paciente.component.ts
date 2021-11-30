@@ -42,12 +42,9 @@ export class ModalEditaPacienteComponent implements OnInit {
       this.servicePaciente
         .editPatient(this.formEditarPaciente.value)
         .subscribe((res) => {
-          // console.log(res);
-          if (res.ok == true) {
+          if (!res.body.msg) {
             this.toastr.success('A edição foi realizada com sucesso');
             this.roteamento.navigate(['/patients']);
-            // this.cancel();
-            // this.ngOnInit();
           } else {
             this.toastr.error('A edição não foi realizada!');
           }
