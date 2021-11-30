@@ -67,4 +67,9 @@ export class ListarMedicosComponent implements OnInit {
     this.isModalEditarOpen = true;
     this.medicoSelecionado = medico;
   }
+
+
+  atualiza(): void {
+    this.ngOnInit();
+  }
 }

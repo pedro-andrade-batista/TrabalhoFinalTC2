@@ -41,5 +41,6 @@
   <app-modal-edita-medico
     (onClose)="isModalEditarOpen = false"
     [medico]="medicoSelecionado"
+    (atualizaChild) = "atualiza()"
   ></app-modal-edita-medico>
 </ng-container>

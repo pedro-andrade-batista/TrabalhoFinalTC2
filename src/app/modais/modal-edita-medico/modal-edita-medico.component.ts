@@ -16,6 +16,7 @@ export class ModalEditaMedicoComponent implements OnInit {
   formEditarMedico: FormGroup;
   @Input() medico: Medico;
   @Output() onClose = new EventEmitter();
+  @Output() atualizaChild = new EventEmitter();
   listaEspecialidades: Especialidade[];
 
   constructor(
@@ -49,6 +50,8 @@ export class ModalEditaMedicoComponent implements OnInit {
         if (!res.body.msg) {
           this.toastr.success('A edição foi realizada com sucesso');
           this.roteamento.navigate(['/listdoctors']);
+          this.atualizaChild.emit(true);
+          this.cancel();
         } else {
           this.toastr.error('A edição não foi realizada!');
         }

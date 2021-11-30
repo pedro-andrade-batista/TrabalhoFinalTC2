@@ -14,6 +14,7 @@ export class ModalEditaPacienteComponent implements OnInit {
   formEditarPaciente: FormGroup;
   @Input() paciente: Paciente;
   @Output() onClose = new EventEmitter();
+  @Output() atualizaChild = new EventEmitter();
   constructor(
     private servicePaciente: PacienteService,
     private toastr: ToastrService,
@@ -45,6 +46,8 @@ export class ModalEditaPacienteComponent implements OnInit {
           if (!res.body.msg) {
             this.toastr.success('A edição foi realizada com sucesso');
             this.roteamento.navigate(['/patients']);
+            this.atualizaChild.emit(true);
+            this.cancel();
           } else {
             this.toastr.error('A edição não foi realizada!');
           }

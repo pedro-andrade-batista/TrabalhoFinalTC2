@@ -33,14 +33,7 @@
 <ng-container *ngIf="isModalDetalhesOpen">
   <app-modal-exibe-paciente (onClose)="isModalDetalhesOpen = false" [paciente]="pacienteSelecionado"></app-modal-exibe-paciente>
 </ng-container>
-<!--
-<ng-container *ngIf="isModalEditarOpen">
-  <app-modal
-    (onClose)="isModalEditarOpen = false"
-    [tipo]="pacienteSelecionado"
-  ></app-modal>
-</ng-container>-->
 
 <ng-container *ngIf="isModalEditarOpen">
-  <app-modal-edita-paciente (onClose)="isModalEditarOpen = false" [paciente]="pacienteSelecionado"></app-modal-edita-paciente>
+  <app-modal-edita-paciente (onClose)="isModalEditarOpen = false" [paciente]="pacienteSelecionado" (atualizaChild) = "atualiza()"></app-modal-edita-paciente>
 </ng-container>

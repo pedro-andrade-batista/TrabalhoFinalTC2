@@ -52,7 +52,8 @@ export class ListarPacientesComponent implements OnInit {
     this.pacienteSelecionado = paciente;
   }
 
-  ngOnChanges(): void {
+  atualiza(): void {
     this.ngOnInit();
   }
+
 }
