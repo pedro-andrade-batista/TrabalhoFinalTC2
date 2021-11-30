@@ -69,6 +69,7 @@ export class ModalExibeMedicoComponent implements OnInit {
     this.serviceConsulta.removeConsulta(consulta).subscribe((res) => {
       if (res.body.status == "OK") {
         this.toastr.success('A exclusão foi realizada com sucesso');
+        this.cancel();
       } else {
         this.toastr.error('A exclusão não foi realizada!');
       }
