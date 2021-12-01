@@ -7,10 +7,11 @@
       <div class="select">
         <select formControlName="idMedico">
           <ng-container *ngFor="let doctor of listaMedicos">
-            <option value="{{ doctor.id }}"> {{ doctor.nome }} </option>
+            <option value="{{ doctor.id }}">{{ doctor.nome }}</option>
           </ng-container>
-        </select></div
-    ></label>
+        </select>
+      </div></label
+    >
 
     <label class="pacienteLabel" for="dataNascimento"
       >Paciente
@@ -19,8 +20,9 @@
           <ng-container *ngFor="let patient of listaPacientes">
             <option value="{{ patient.id }}">{{ patient.nome }}</option>
           </ng-container>
-        </select></div
-    ></label>
+        </select>
+      </div></label
+    >
 
     <label class="label" for="dataConsulta"
       >Data da consulta
@@ -40,6 +42,6 @@
         formControlName="horaConsulta"
     /></label>
 
-    <button class="button" type="submit">Cadastrar</button>
+    <button class="button is-primary" type="submit">Cadastrar</button>
   </form>
 </div>

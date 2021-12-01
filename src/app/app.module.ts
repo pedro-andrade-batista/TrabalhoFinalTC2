@@ -18,15 +18,10 @@ import { LogInterceptorInterceptor } from './log-interceptor.interceptor';
 import { ListarMedicosComponent } from './medico/listar-medicos/listar-medicos.component';
 import { CadastrarMedicoComponent } from './medico/cadastrar-medico/cadastrar-medico.component';
 import { CadastrarConsultaComponent } from './consulta/cadastrar-consulta/cadastrar-consulta.component';
-// import { ModalComponent } from './modal/modal.component';
-// import { ConteudoModalExibirComponent } from './modal/conteudo-modal-exibir/conteudo-modal-exibir.component';
-// import { ModalEditarPacienteComponent } from './modal/modal-editar-paciente/modal-editar-paciente.component';
-// import { ModalEditarMedicoComponent } from './modal/modal-editar-medico/modal-editar-medico.component';
 import { ModalExibePacienteComponent } from './modais/modal-exibe-paciente/modal-exibe-paciente.component';
 import { ModalExibeMedicoComponent } from './modais/modal-exibe-medico/modal-exibe-medico.component';
 import { ModalEditaMedicoComponent } from './modais/modal-edita-medico/modal-edita-medico.component';
 import { ModalEditaPacienteComponent } from './modais/modal-edita-paciente/modal-edita-paciente.component';
-import { DataPipe } from './pipes/data.pipe';
 
 @NgModule({
   declarations: [
@@ -40,15 +35,10 @@ import { DataPipe } from './pipes/data.pipe';
     ListarMedicosComponent,
     CadastrarMedicoComponent,
     CadastrarConsultaComponent,
-    // ModalComponent,
-    // ConteudoModalExibirComponent,
-    // ModalEditarPacienteComponent,
-    // ModalEditarMedicoComponent,
     ModalExibePacienteComponent,
     ModalExibeMedicoComponent,
     ModalEditaMedicoComponent,
     ModalEditaPacienteComponent,
-    DataPipe,
   ],
   imports: [
     BrowserModule,
