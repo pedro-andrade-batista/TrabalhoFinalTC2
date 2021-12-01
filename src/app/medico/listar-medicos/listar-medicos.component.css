@@ -1,3 +1,13 @@
+.title {
+  width: 100%;
+  padding-top: 7rem;
+  position: absolute;
+}
+
+h1 {
+  font-size: 1.7rem;
+}
+
 div {
   display: flex;
   justify-content: center;

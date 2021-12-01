@@ -1,8 +1,10 @@
 <div class="modal is-active" id="modalContainer">
-    <div class="modal-background" (click)="cancel()"></div>
-    <div class="modal-content">
-      <div class="modal-card">
-        <section class="modal-card-body">
+  <div class="modal-background" (click)="cancel()"></div>
+  <div class="modal-content">
+    <div class="modal-card">
+      <section class="modal-card-body">
+        <div class="container">
+          <h1><b>Editar paciente</b></h1>
           <form [formGroup]="formEditarPaciente" (ngSubmit)="onSubmit()">
             <label for="nome"
               >Nome
@@ -12,7 +14,7 @@
                 type="text"
                 formControlName="nome"
             /></label>
-        
+
             <label class="label" for="dataNascimento"
               >Data de Nascimento
               <input
@@ -23,13 +25,13 @@
             /></label>
             <button class="button" type="submit">Editar</button>
           </form>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
-    <button
-      class="modal-close is-large"
-      aria-label="close"
-      (click)="cancel()"
-    ></button>
   </div>
-  
+  <button
+    class="modal-close is-large"
+    aria-label="close"
+    (click)="cancel()"
+  ></button>
+</div>

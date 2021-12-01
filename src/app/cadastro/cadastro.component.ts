@@ -16,8 +16,7 @@ export class CadastroComponent implements OnInit {
     private service: APIconnectionService,
     private toastr: ToastrService,
     private roteamento: Router
-    
-    ) {}
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -39,11 +38,15 @@ export class CadastroComponent implements OnInit {
         if (!res.body.status) {
           this.toastr.success('Sucesso', 'Cadastro realizado com sucesso');
           this.roteamento.navigate(['/login']);
-        }
-        else {
-          this.toastr.error('Erro', 'Houve uma falha no cadastro: ' + res.body.msg);
+        } else {
+          this.toastr.error(
+            'Erro',
+            'Houve uma falha no cadastro: ' + res.body.msg
+          );
         }
       });
+    } else {
+      this.toastr.error('Erro', 'Houve uma falha no cadastro');
     }
   }
 }

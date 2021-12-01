@@ -5,11 +5,14 @@
     <label for="nome"
       >Nome
       <input
-        class="input is-danger"
         id="nome"
         type="text"
         formControlName="nome"
-        
+        [ngClass]="
+          this.formCadastroPaciente.get('nome')?.valid
+            ? 'input is-success'
+            : 'input is-danger'
+        "
     /></label>
 
     <label for="dataNascimento"

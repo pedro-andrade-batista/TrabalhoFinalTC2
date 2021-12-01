@@ -1,43 +1,43 @@
 @keyframes appear {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
+  from {
+    opacity: 0;
   }
-  
-  #modalContainer {
-    animation: appear 0.5s ease-in-out;
+
+  to {
+    opacity: 1;
   }
-  
-  .modal-card-body {
-    display: flex;
-    justify-content: center;
-    border-radius: 20px;
-    min-height: 350px;
-    animation: appear 0.75s ease-in-out;
-  }
-  
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  h1 {
-    font-size: 1.25rem;
-    margin: 1.5rem 0;
-  }
-  
-  label {
-    width: 346px;
-    font-weight: 400;
-    margin-bottom: 1rem;
-  }
-  
-  button {
-    margin-top: 1rem;
-  }
-  
+}
+
+#modalContainer {
+  animation: appear 0.5s ease-in-out;
+}
+
+.modal-card-body {
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  min-height: 350px;
+  width: 500px;
+  animation: appear 0.75s ease-in-out;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+label {
+  width: 346px;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+}

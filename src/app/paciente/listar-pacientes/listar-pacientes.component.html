@@ -1,3 +1,7 @@
+<div class="title">
+  <h1><b>Lista de pacientes</b></h1>
+</div>
+
 <div>
   <table>
     <thead>
@@ -31,9 +35,16 @@
 </div>
 
 <ng-container *ngIf="isModalDetalhesOpen">
-  <app-modal-exibe-paciente (onClose)="isModalDetalhesOpen = false" [paciente]="pacienteSelecionado"></app-modal-exibe-paciente>
+  <app-modal-exibe-paciente
+    (onClose)="isModalDetalhesOpen = false"
+    [paciente]="pacienteSelecionado"
+  ></app-modal-exibe-paciente>
 </ng-container>
 
 <ng-container *ngIf="isModalEditarOpen">
-  <app-modal-edita-paciente (onClose)="isModalEditarOpen = false" [paciente]="pacienteSelecionado" (atualizaChild) = "atualiza()"></app-modal-edita-paciente>
+  <app-modal-edita-paciente
+    (onClose)="isModalEditarOpen = false"
+    [paciente]="pacienteSelecionado"
+    (atualizaChild)="atualiza()"
+  ></app-modal-edita-paciente>
 </ng-container>

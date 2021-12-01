@@ -56,6 +56,8 @@ export class ModalEditaMedicoComponent implements OnInit {
           this.toastr.error('A edição não foi realizada!');
         }
       });
+    } else {
+      this.toastr.error('Erro', 'Houve uma falha na edição');
     }
   }
 

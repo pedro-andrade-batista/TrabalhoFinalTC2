@@ -14,6 +14,7 @@ import { Especialidade } from 'src/app/models/especialidade.model';
 export class CadastrarMedicoComponent implements OnInit {
   formCadastroMedico: FormGroup;
   listaEspecialidades: Especialidade[];
+  valido: string;
 
   constructor(
     private service: MedicoService,
@@ -47,6 +48,8 @@ export class CadastrarMedicoComponent implements OnInit {
           this.toastr.error('O cadastro não foi realizado!');
         }
       });
+    } else {
+      this.toastr.error('Erro', 'Houve uma falha no cadastro');
     }
   }
 
@@ -57,5 +60,10 @@ export class CadastrarMedicoComponent implements OnInit {
         return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
       });
     });
+  }
+
+  isValid() {
+    if (this.formCadastroMedico.get('nome')?.valid) {
+    }
   }
 }

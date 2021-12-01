@@ -5,19 +5,27 @@
     <label for="email"
       >E-mail
       <input
-        class="input is-primary"
         id="email"
         type="email"
         formControlName="email"
+        [ngClass]="
+          this.formLogin.get('email')?.valid
+            ? 'input is-success'
+            : 'input is-danger'
+        "
     /></label>
 
     <label for="senha"
       >Senha
       <input
-        class="input is-primary"
         id="senha"
         type="password"
         formControlName="senha"
+        [ngClass]="
+          this.formLogin.get('senha')?.valid
+            ? 'input is-success'
+            : 'input is-danger'
+        "
     /></label>
 
     <button class="button" type="submit">Login</button>

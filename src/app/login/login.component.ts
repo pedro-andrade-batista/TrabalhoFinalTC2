@@ -43,6 +43,8 @@ export class LoginComponent implements OnInit {
           this.toastr.error('Falha', 'Login ou senha inválidos');
         }
       });
+    } else {
+      this.toastr.error('Erro', 'Houve uma falha no login');
     }
   }
 }

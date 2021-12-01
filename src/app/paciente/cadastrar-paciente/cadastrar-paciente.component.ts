@@ -37,13 +37,15 @@ export class CadastrarPacienteComponent implements OnInit {
       this.service
         .addPatient(this.formCadastroPaciente.value)
         .subscribe((res) => {
-          if(!res.body.msg){
+          if (!res.body.msg) {
             this.toastr.success('O cadastro foi realizado com sucesso');
             this.roteamento.navigate(['/listpatients']);
-          }else {
+          } else {
             this.toastr.error('O cadastro não foi realizado!');
           }
         });
+    } else {
+      this.toastr.error('Erro', 'Houve uma falha no cadastro');
     }
   }
 }

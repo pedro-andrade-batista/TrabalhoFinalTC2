@@ -1,3 +1,7 @@
+<div class="title">
+  <h1><b>Lista de medicos</b></h1>
+</div>
+
 <div>
   <table>
     <thead>
@@ -41,6 +45,6 @@
   <app-modal-edita-medico
     (onClose)="isModalEditarOpen = false"
     [medico]="medicoSelecionado"
-    (atualizaChild) = "atualiza()"
+    (atualizaChild)="atualiza()"
   ></app-modal-edita-medico>
 </ng-container>

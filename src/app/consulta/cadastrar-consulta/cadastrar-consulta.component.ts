@@ -54,6 +54,8 @@ export class CadastrarConsultaComponent implements OnInit {
             this.toastr.error('O cadastro não foi realizado!', res.body.msg);
           }
         });
+    } else {
+      this.toastr.error('Erro', 'Houve uma falha no cadastro');
     }
   }
   getMedicos() {

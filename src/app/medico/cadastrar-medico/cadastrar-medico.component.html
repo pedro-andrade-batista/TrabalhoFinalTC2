@@ -5,12 +5,16 @@
     <label class="nomeLabel" for="nome"
       >Nome
       <input
-        class="input is-primary"
+        [ngClass]="
+          this.formCadastroMedico.get('nome')?.valid
+            ? 'input is-success'
+            : 'input is-danger'
+        "
         id="nome"
         type="text"
         formControlName="nome"
     /></label>
- 
+
     <label class="especialidadeLabel" for="especialidade"
       >Especialidade
       <div class="select">
