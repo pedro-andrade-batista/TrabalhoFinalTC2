@@ -18,10 +18,14 @@
     <label for="dataNascimento"
       >Data de Nascimento
       <input
-        class="input is-primary"
         id="dataNascimento"
         type="date"
         formControlName="dataNascimento"
+        [ngClass]="
+          this.formCadastroPaciente.get('dataNascimento')?.valid
+            ? 'input is-success'
+            : 'input is-danger'
+        "
     /></label>
 
     <button class="button is-primary" type="submit">Cadastrar</button>

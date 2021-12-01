@@ -27,19 +27,27 @@
     <label class="label" for="dataConsulta"
       >Data da consulta
       <input
-        class="input is-primary"
         id="dataConsulta"
         type="date"
         formControlName="dataConsulta"
+        [ngClass]="
+          this.formCadastroConsulta.get('dataConsulta')?.valid
+            ? 'input is-success'
+            : 'input is-danger'
+        "
     /></label>
 
     <label class="label" for="horaConsulta"
       >Hora da consulta
       <input
-        class="input is-primary"
         id="horaConsulta"
         type="time"
         formControlName="horaConsulta"
+        [ngClass]="
+          this.formCadastroConsulta.get('horaConsulta')?.valid
+            ? 'input is-success'
+            : 'input is-danger'
+        "
     /></label>
 
     <button class="button is-primary" type="submit">Cadastrar</button>
