@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoggedService } from '../services/logged.service';
 
 @Component({
   selector: 'app-nav',
@@ -12,6 +13,7 @@ export class NavComponent implements OnInit {
 
   constructor(
     private roteamento : Router,
+    private serviceLogged: LoggedService
   ) { }
 
   ngOnInit(): void {
@@ -22,12 +24,7 @@ export class NavComponent implements OnInit {
   }
 
   isLogged(): void{
-    if(sessionStorage.getItem("token") != null){
-      this.authorized = true;
-    }
-    else{
-      this.authorized = false;
-    }
+    this.authorized = this.serviceLogged.isLogged();
   }
 
   logout(): void{

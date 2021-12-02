@@ -60,8 +60,11 @@ import { NotLoggedGuard } from './guards/not-logged.guard';
     },
     [
       AuthGuardService,
-      NotLoggedGuard
     ],
+    [
+      NotLoggedGuard,
+      NotLoggedGuard
+    ]
   ],
   bootstrap: [AppComponent],
 })
