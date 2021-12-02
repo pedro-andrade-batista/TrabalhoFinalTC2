@@ -14,30 +14,25 @@ import { PacienteService } from 'src/app/services/paciente.service';
   styleUrls: ['./modal-exibe-paciente.component.css'],
 })
 export class ModalExibePacienteComponent implements OnInit {
+  @Input() listaMedicos: Medico[];
   @Input() paciente: Paciente;
   @Output() onClose = new EventEmitter();
   listaConsultas: Consulta[];
-  listaMedicos: Medico[];
-  listaPacientes: Paciente[];
   listaConsultaPaciente: Array<any> = [];
 
   constructor(
     private serviceConsulta: ConsultaService,
     private serviceMedico: MedicoService,
-    private servicePaciente: PacienteService,
     private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
-    this.getMedicos();
-    this.getPacientes();
     this.getConsultas();
   }
 
   getConsultas() {
-    this.serviceConsulta.getConsultas().subscribe((res) => {
+    this.serviceConsulta.getConsultas().toPromise().then((res) => {
       this.listaConsultas = res;
-
       this.listaConsultas.map((consulta) => {
         if (consulta.idPaciente == this.paciente.id) {
           let medico = this.listaMedicos.find(
@@ -50,21 +45,10 @@ export class ModalExibePacienteComponent implements OnInit {
               paciente: this.paciente.nome,
               data: consulta.data,
             };
-            console.log(newObject);
             this.listaConsultaPaciente.push(newObject);
           }
         }
       });
-    });
-  }
-  getMedicos() {
-    this.serviceMedico.getDoctors().subscribe((res) => {
-      this.listaMedicos = res;
-    });
-  }
-  getPacientes() {
-    this.servicePaciente.getPatient().subscribe((res) => {
-      this.listaPacientes = res;
     });
   }
 

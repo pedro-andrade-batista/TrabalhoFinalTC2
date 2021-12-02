@@ -4,6 +4,8 @@ import { EspecialidadesService } from 'src/app/services/especialidades.service';
 import { MedicoService } from 'src/app/services/medico.service';
 import { Especialidade } from 'src/app/models/especialidade.model';
 import { Medico } from 'src/app/models/medico.model';
+import { PacienteService } from 'src/app/services/paciente.service';
+import { Paciente } from 'src/app/models/paciente.model';
 
 @Component({
   selector: 'app-listar-medicos',
@@ -12,6 +14,7 @@ import { Medico } from 'src/app/models/medico.model';
 })
 export class ListarMedicosComponent implements OnInit {
   listaMedicos: Medico[];
+  listaPatients: Paciente[];
   listaEspecialidades: Especialidade[];
   medicoSelecionado: Medico;
   isModalDetalhesOpen = false;
@@ -20,12 +23,14 @@ export class ListarMedicosComponent implements OnInit {
   constructor(
     private service: MedicoService,
     private serviceEspecialidade: EspecialidadesService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private servicePaciente: PacienteService,
   ) {}
 
   ngOnInit(): void {
     this.getMedicos();
     this.getEspecialidades();
+    this.getPacientes();
   }
   teste(): void {
     this.getMedicos();
@@ -68,6 +73,11 @@ export class ListarMedicosComponent implements OnInit {
     this.medicoSelecionado = medico;
   }
 
+  getPacientes() {
+    this.servicePaciente.getPatient().subscribe((res) => {
+      this.listaPatients = res;
+    });
+  }
 
   atualiza(): void {
     this.ngOnInit();

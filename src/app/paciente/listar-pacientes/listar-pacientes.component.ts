@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Medico } from 'src/app/models/medico.model';
 import { Paciente } from 'src/app/models/paciente.model';
+import { MedicoService } from 'src/app/services/medico.service';
 import { PacienteService } from 'src/app/services/paciente.service';
 
 @Component({
@@ -11,6 +13,7 @@ import { PacienteService } from 'src/app/services/paciente.service';
 })
 export class ListarPacientesComponent implements OnInit {
   listaPacientes: Paciente[];
+  listaDoutores: Medico[];
   pacienteSelecionado: Paciente;
   isModalDetalhesOpen = false;
   isModalEditarOpen = false;
@@ -18,11 +21,12 @@ export class ListarPacientesComponent implements OnInit {
   constructor(
     private service: PacienteService,
     private toastr: ToastrService,
-    private roteamento: Router
+    private serviceMedico: MedicoService,
   ) {}
 
   ngOnInit(): void {
     this.getPacientes();
+    this.getMedicos();
   }
 
   getPacientes() {
@@ -54,6 +58,12 @@ export class ListarPacientesComponent implements OnInit {
 
   atualiza(): void {
     this.ngOnInit();
+  }
+
+  getMedicos() {
+    this.serviceMedico.getDoctors().subscribe((res) => {
+      this.listaDoutores = res;
+    });
   }
 
 }
