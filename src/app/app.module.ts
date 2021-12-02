@@ -23,6 +23,7 @@ import { ModalExibeMedicoComponent } from './modais/modal-exibe-medico/modal-exi
 import { ModalEditaMedicoComponent } from './modais/modal-edita-medico/modal-edita-medico.component';
 import { ModalEditaPacienteComponent } from './modais/modal-edita-paciente/modal-edita-paciente.component';
 import { AuthGuardService } from './guards/auth-guard.service';
+import { NotLoggedGuard } from './guards/not-logged.guard';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,10 @@ import { AuthGuardService } from './guards/auth-guard.service';
       useClass: LogInterceptorInterceptor,
       multi: true,
     },
-    [AuthGuardService],
+    [
+      AuthGuardService,
+      NotLoggedGuard
+    ],
   ],
   bootstrap: [AppComponent],
 })

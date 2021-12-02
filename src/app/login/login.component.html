@@ -8,6 +8,7 @@
         id="email"
         type="email"
         formControlName="email"
+        placeholder="exemplo@email.com"
         [ngClass]="
           this.formLogin.get('email')?.valid
             ? 'input is-success'
@@ -21,6 +22,7 @@
         id="senha"
         type="password"
         formControlName="senha"
+        placeholder="mínimo de 6 caracteres"
         [ngClass]="
           this.formLogin.get('senha')?.valid
             ? 'input is-success'
